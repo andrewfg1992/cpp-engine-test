@@ -17,5 +17,5 @@ disp(result);
 % Try starting MATLAB via binary
 %system(binName);
 
-%cmd = ['export LD_LIBRARY_PATH=' mlroot '/extern/bin/glnxa64:' mlroot '/sys/os/glnxa64 && ./main'];
-%system(cmd);
+cmd = ['LD_LIBRARY_PATH=' mlroot '/extern/bin/glnxa64:' mlroot '/sys/os/glnxa64 ./main'];
+system(cmd);
