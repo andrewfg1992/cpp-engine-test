@@ -23,3 +23,8 @@ void callFevalgcd() {
     int16_t v = result[0];
     std::cout << "Result: " << v << std::endl;
 }
+
+// Program entry point which calls the example
+int main() {
+    callFevalgcd();
+}
