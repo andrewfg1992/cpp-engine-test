@@ -19,3 +19,17 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: myBuildScript
+      - name: Get MATLAB root and run binary
+        shell: bash
+        run: |
+          # Get MATLAB root path
+          MLROOT=$(matlab -batch "disp(matlabroot)" | tail -n 1)
+
+          # Export LD_LIBRARY_PATH and run your binary
+          export LD_LIBRARY_PATH="$MLROOT/bin/glnxa64:$MLROOT/extern/bin/glnxa64:$MLROOT/sys/os/glnxa64:$LD_LIBRARY_PATH"
+
+          # Optionally confirm LD_LIBRARY_PATH for debugging
+          echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+
+          # Run your binary (make sure it's built and in this directory)
+          ./main
