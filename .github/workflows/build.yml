@@ -20,6 +20,10 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: fh=fopen(getenv('GITHUB_ENV'),'a'); fprintf(fh,'LD_LIBRARY_PATH=%s/bin/glnxa64:%s/sys/os/glnxa64\n', matlabroot, matlabroot); fclose(fh);
+      - name: view directories for debug
+        uses: matlab-actions/run-command@v2
+        with:
+          command: ls([matlabroot '/bin/glnxa64']); ls([matlabroot '/sys/os/glnxa64']);
       - name: Run script
         uses: matlab-actions/run-command@v2
         with:
