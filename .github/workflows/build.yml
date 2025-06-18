@@ -19,7 +19,7 @@ jobs:
       - name: Set runtime paths
         uses: matlab-actions/run-command@v2
         with:
-          command: fh=fopen(getenv('GITHUB_ENV'),'a'); fprintf(fh,'LD_LIBRARY_PATH=%s/bin/glnxa64:%s/extern/bin/glnxa64:$MLROOT/sys/os/glnxa64\n', matlabroot); fclose(fh);
+          command: fh=fopen(getenv('GITHUB_ENV'),'a'); fprintf(fh,'LD_LIBRARY_PATH=%s/bin/glnxa64:%s/sys/os/glnxa64\n', matlabroot); fclose(fh);
       - name: Run script
         uses: matlab-actions/run-command@v2
         with:
