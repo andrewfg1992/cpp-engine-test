@@ -23,7 +23,7 @@ jobs:
       - name: view directories for debug
         uses: matlab-actions/run-command@v2
         with:
-          command: ls([matlabroot '/bin/glnxa64']); ls([matlabroot '/sys/os/glnxa64']);
+          command: disp('dir1'); ls([matlabroot '/bin/glnxa64']); disp('dir2'); ls([matlabroot '/sys/os/glnxa64']);
       - name: Run script
         uses: matlab-actions/run-command@v2
         with:
