@@ -35,7 +35,7 @@ jobs:
           echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 
           # Try running MATLAB from shell
-          matlab -nodesktop -r "disp('Hello World');"
+          /opt/hostedtoolcache/matlab-batch/v1/x64/matlab-batch -r "disp('Hello World');"
           
           # Run the application
           ./main
