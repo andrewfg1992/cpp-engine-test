@@ -34,5 +34,8 @@ jobs:
           # Confirm LD_LIBRARY_PATH for debugging
           echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 
+          # Try running MATLAB from shell
+          matlab -r "disp('Hello World');"
+          
           # Run the application
           ./main
